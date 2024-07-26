@@ -16,79 +16,80 @@
             android:id="@+id/burgerOne"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:src="@drawable/burger"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"/>
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/burger" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/bungee"
-            android:text="Welcome to Burger Town"
+            android:text="@string/welcome"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:ignore="RelativeOverlap"/>
+            tools:ignore="RelativeOverlap" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
             android:layout_gravity="center"
-            android:src="@drawable/burger"/>
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/burger" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="9dp"
         android:layout_marginVertical="10dp"
-        android:background="@color/darkBrown">
+        android:background="@color/darkBrown"
+        android:paddingVertical="9dp">
 
         <TextView
             android:id="@+id/burgerTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Select a Burger"
             android:layout_marginHorizontal="9dp"
-            android:fontFamily="@font/bungee"/>
+            android:fontFamily="@font/bungee"
+            android:text="@string/select_burger"
+            android:textColor="@color/white" />
 
         <RadioGroup
+            android:id="@+id/burgerCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/burgerTitle"
             android:orientation="horizontal"
-            android:id="@+id/burgerCategory"
             android:paddingHorizontal="10dp">
 
             <RadioButton
+                android:id="@+id/nonVegBurgerRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
-                android:id="@+id/nonVegBurgerRadioButton"
-                android:text="Non-Veg Burger"
-                android:textColor="@color/white"
-                android:fontFamily="@font/bungee"
                 android:layout_marginHorizontal="10dp"
-                android:theme="@style/MyRadioButton"/>
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/bungee"
+                android:text="@string/non_veg"
+                android:textColor="@color/white"
+                android:theme="@style/MyRadioButton" />
 
             <RadioButton
+                android:id="@+id/vegBurgerRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
-                android:id="@+id/vegBurgerRadioButton"
-                android:text="Veg Burger"
-                android:textColor="@color/white"
-                android:fontFamily="@font/bungee"
                 android:layout_marginHorizontal="10dp"
-                android:theme="@style/MyRadioButton"/>
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/bungee"
+                android:text="@string/veg"
+                android:textColor="@color/white"
+                android:theme="@style/MyRadioButton" />
         </RadioGroup>
     </RelativeLayout>
 
     <FrameLayout
+        android:id="@+id/burgerFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/burgerFrame"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

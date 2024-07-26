@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">BurgerTown</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_burger">this is top of burger bread </string>
+    <string name="bottom_burger">this is bottom of burger bread </string>
+    <string name="seed"> this is seed </string>
+    <string name="welcome">  Welcome to Burger Town </string>
+    <string name="logo"> This is burger Logo </string>
+    <string name="select_burger">    Select a Burger:  </string>
+    <string name="non_veg"> NON VEG  </string>
+    <string name="veg">  VEG  </string>
+    <string name="order"> Order Now </string>
+    <string name="salad"> Salad </string>
+    <string name="bacon"> Bacon </string>
+    <string name="cheese"> Cheese </string>
+    <string name="meat"> Meat </string>
+    <string name="add"> + </string>
+    <string name="remove"> - </string>
+    <string name="bun_price"> 55 </string>
+    <string name="current_price"> Current Price: Rs&#160; </string>
+    <string name="veg_bacon"> Carrot Bacon </string>
+    <string name="patty"> Veg Patty </string>
 </resources>
