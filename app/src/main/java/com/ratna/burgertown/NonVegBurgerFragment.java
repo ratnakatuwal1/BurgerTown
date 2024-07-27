@@ -229,27 +229,27 @@ public class NonVegBurgerFragment extends Fragment {
 
     void changeCheese() {
         cheeseLayout.removeAllViews();
-for (int i = 0; i < cheeseCount; i++) {
-    ImageView imageView = new ImageView(getActivity());
-    imageView.setBackgroundResource(R.drawable.cheese_shape);
-    int heightInPixels = (int) TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            15,
-            getResources().getDisplayMetrics()
-    );
+        for (int i = 0; i < cheeseCount; i++) {
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setBackgroundResource(R.drawable.cheese_shape);
+            int heightInPixels = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    15,
+                    getResources().getDisplayMetrics()
+            );
 
-    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            heightInPixels
-    );
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    heightInPixels
+            );
 
-    imageView.setLayoutParams(params);
-    cheeseLayout.addView(imageView);
-}
-updateTotalPrice();
+            imageView.setLayoutParams(params);
+            cheeseLayout.addView(imageView);
+        }
+        updateTotalPrice();
     }
 
-    void changeMeat(){
+    void changeMeat() {
         meatLayout.removeAllViews();
         for (int i = 0; i < meatCount; i++) {
             ImageView imageView = new ImageView(getActivity());

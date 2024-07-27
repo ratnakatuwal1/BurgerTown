@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VegBurgerFragment extends Fragment {
     LinearLayout saladLayout, baconLayout, cheeseLayout, PattyLayout;
@@ -122,8 +123,31 @@ public class VegBurgerFragment extends Fragment {
             TextView saladPriceText = view2.findViewById(R.id.saladPrice);
             saladPriceText.setText(String.valueOf(saladCount * saladPrice));
 
+            TextView carrotBaconQuantity = view2.findViewById(R.id.bQty);
+            carrotBaconQuantity.setText(String.valueOf(carrotBaconCount));
+
+            TextView carrotBaconPriceText = view2.findViewById(R.id.beaconPrice);
+            carrotBaconPriceText.setText(String.valueOf(carrotBaconCount * carrotBaconPrice));
+
+            TextView cheeseQuantity = view2.findViewById(R.id.cQty);
+            cheeseQuantity.setText(String.valueOf(cheeseCount));
+
+            TextView cheesePriceText = view2.findViewById(R.id.CheesePrice);
+            cheesePriceText.setText(String.valueOf(cheeseCount * cheesePrice));
+
+            TextView pattyQuantity = view2.findViewById(R.id.pQty);
+            pattyQuantity.setText(String.valueOf(pattyCount));
+
+            TextView pattyPriceText = view2.findViewById(R.id.pattyPrice);
+            pattyPriceText.setText(String.valueOf(pattyCount * pattyPrice));
+
+            TextView totalPriceText = view2.findViewById(R.id.totalPrice);
+            totalPriceText.setText("Total Price: " + (bunPrice + totalPrice));
+
             Button confirm = view2.findViewById(R.id.btnConfirm);
             confirm.setOnClickListener(view3 -> {
+                Toast.makeText(getActivity(), "Order Confirmed", Toast.LENGTH_SHORT).show();
+                resetValues();
                 alert.dismiss();
             });
 
@@ -132,6 +156,19 @@ public class VegBurgerFragment extends Fragment {
             alert.show();
         });
         return view;
+    }
+
+    private void resetValues(){
+        saladCount = 0;
+        carrotBaconCount = 0;
+        cheeseCount = 0;
+        pattyCount = 0;
+        totalPrice = 0;
+        changeSalad();
+        changeCarrotBacon();
+        changeCheese();
+        changePatty();
+        totalPriceText.setText(String.valueOf(bunPrice));
     }
 
     void changeSalad() {
@@ -220,8 +257,8 @@ public class VegBurgerFragment extends Fragment {
     }
 
     private void updateTotalPrice() {
-        totalPrice = bunPrice + (saladCount * saladPrice) + (carrotBaconCount * carrotBaconPrice) + (cheeseCount * cheesePrice) + (pattyCount * pattyPrice);
-        totalPriceText.setText(String.valueOf(totalPrice));
+        totalPrice = (saladCount * saladPrice) + (carrotBaconCount * carrotBaconPrice) + (cheeseCount * cheesePrice) + (pattyCount * pattyPrice);
+        totalPriceText.setText(String.valueOf(bunPrice + totalPrice));
     }
 
 }

@@ -19,7 +19,6 @@ public class BurgerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_burger);
-
         nonVegBurgerRadioButton = findViewById(R.id.nonVegBurgerRadioButton);
         vegBurgerRadioButton = findViewById(R.id.vegBurgerRadioButton);
 
