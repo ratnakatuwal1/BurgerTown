@@ -95,7 +95,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/bacon_shape" />
+                android:src="@drawable/carrot_bacon" />
         </LinearLayout>
 
         <TextView
@@ -172,18 +172,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/meat"
+                android:text="@string/patty"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/meat_shape" />
+                android:src="@drawable/veg_patty" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/mQty"
+            android:id="@+id/pQty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -192,7 +192,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/meatPrice"
+            android:id="@+id/pattyPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -201,19 +201,9 @@
             android:textSize="16sp" />
     </TableRow>
 
-    <TextView
-        android:id="@+id/totalPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/total_price"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp" />
-
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/confirm" />
 </TableLayout>

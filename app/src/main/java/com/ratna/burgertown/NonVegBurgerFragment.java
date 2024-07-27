@@ -1,7 +1,5 @@
 package com.ratna.burgertown;
 
-import static android.util.TypedValue.applyDimension;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class NonVegBurgerFragment extends Fragment {
@@ -126,17 +125,53 @@ public class NonVegBurgerFragment extends Fragment {
             TextView saladPriceText = view2.findViewById(R.id.saladPrice);
             saladPriceText.setText(String.valueOf(saladCount * saladPrice));
 
+            TextView baconQuantity = view2.findViewById(R.id.bQty);
+            baconQuantity.setText(String.valueOf(baconCount));
+
+            TextView baconPriceText = view2.findViewById(R.id.beaconPrice);
+            baconPriceText.setText(String.valueOf(baconCount * baconPrice));
+
+            TextView cheeseQuantity = view2.findViewById(R.id.cQty);
+            cheeseQuantity.setText(String.valueOf(cheeseCount));
+
+            TextView cheesePriceText = view2.findViewById(R.id.CheesePrice);
+            cheesePriceText.setText(String.valueOf(cheeseCount * cheesePrice));
+
+            TextView meatQuantity = view2.findViewById(R.id.mQty);
+            meatQuantity.setText(String.valueOf(meatCount));
+
+            TextView meatPriceText = view2.findViewById(R.id.meatPrice);
+            meatPriceText.setText(String.valueOf(meatCount * meatPrice));
+
+            TextView totalPriceText = view2.findViewById(R.id.totalPrice);
+            totalPriceText.setText("Total Price: " + (bunPrice + totalPrice));
+
             Button confirm = view2.findViewById(R.id.btnConfirm);
             confirm.setOnClickListener(view3 -> {
+                Toast.makeText(getActivity(), "Order Confirmed", Toast.LENGTH_SHORT).show();
+                resetValues();
                 alert.dismiss();
             });
 
-            builder.setView(view);
+            builder.setView(view2);
             alert = builder.create();
             alert.show();
         });
 
         return view;
+    }
+
+    private void resetValues() {
+        saladCount = 0;
+        baconCount = 0;
+        cheeseCount = 0;
+        meatCount = 0;
+        totalPrice = 0;
+        changeSalad();
+        changeBacon();
+        changeCheese();
+        changeMeat();
+        totalPriceText.setText(String.valueOf(bunPrice));
     }
 
     void changeSalad() {
@@ -237,7 +272,7 @@ updateTotalPrice();
     }
 
     void updateTotalPrice() {
-        totalPrice = bunPrice + (saladCount * saladPrice) + (baconCount * baconPrice) + (cheeseCount * cheesePrice) + (meatCount * meatPrice);
-        totalPriceText.setText(String.valueOf(totalPrice));
+        totalPrice = (saladCount * saladPrice) + (baconCount * baconPrice) + (cheeseCount * cheesePrice) + (meatCount * meatPrice);
+        totalPriceText.setText(String.valueOf(bunPrice + totalPrice));
     }
 }
