@@ -114,7 +114,6 @@ public class NonVegBurgerFragment extends Fragment {
         });
 
 
-
         orderButton.setOnClickListener(view1 -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("Order Confirmation");
@@ -150,17 +149,13 @@ public class NonVegBurgerFragment extends Fragment {
             TextView totalPriceText = view2.findViewById(R.id.totalPrice);
             totalPriceText.setText("Total Price: " + (bunPrice + totalPrice));
 
-
-
             DatePicker datePicker = view2.findViewById(R.id.orderDate);
-
             datePicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
                 @Override
                 public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
                     Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
                 }
             });
-
 
             Button confirm = view2.findViewById(R.id.btnConfirm);
             confirm.setOnClickListener(view3 -> {
