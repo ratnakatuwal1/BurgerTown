@@ -26,6 +26,8 @@ public class BurgerActivity extends AppCompatActivity {
             NonVegBurgerFragment nonVegBurgerFragment = new NonVegBurgerFragment();
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+
             fragmentTransaction.add(R.id.burgerFrame, nonVegBurgerFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
@@ -35,6 +37,7 @@ public class BurgerActivity extends AppCompatActivity {
             VegBurgerFragment vegBurgerFragment = new VegBurgerFragment();
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
             fragmentTransaction.add(R.id.burgerFrame, vegBurgerFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();

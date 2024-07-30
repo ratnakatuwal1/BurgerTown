@@ -1,5 +1,6 @@
 package com.ratna.burgertown;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -111,6 +113,8 @@ public class NonVegBurgerFragment extends Fragment {
             changeMeat();
         });
 
+
+
         orderButton.setOnClickListener(view1 -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("Order Confirmation");
@@ -146,6 +150,18 @@ public class NonVegBurgerFragment extends Fragment {
             TextView totalPriceText = view2.findViewById(R.id.totalPrice);
             totalPriceText.setText("Total Price: " + (bunPrice + totalPrice));
 
+
+
+            DatePicker datePicker = view2.findViewById(R.id.orderDate);
+
+            datePicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
+                    Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
             Button confirm = view2.findViewById(R.id.btnConfirm);
             confirm.setOnClickListener(view3 -> {
                 Toast.makeText(getActivity(), "Order Confirmed", Toast.LENGTH_SHORT).show();
@@ -157,6 +173,7 @@ public class NonVegBurgerFragment extends Fragment {
             alert = builder.create();
             alert.show();
         });
+
 
         return view;
     }
